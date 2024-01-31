@@ -1,0 +1,912 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: 0;
+}
+li {
+	list-style: none !important;
+}
+
+.fas,.far {
+	font-family: 'Font Awesome 5 Pro';
+	margin-top: -2px;
+	font-weight: 300
+}
+
+@font-face {
+	font-family: 'Font Awesome 5 Pro';
+	font-style: normal;
+	font-weight: 300;
+	font-display: auto;
+	src: url(webfonts/fa-brands-400.ttf);
+	src: url(webfonts/fa-light-300.eot?#iefix) format("embedded-opentype"), url(webfonts/fa-light-300.woff2) format("woff2"), url(webfonts/fa-light-300.woff) format("woff"), url(webfonts/fa-light-300.ttf) format("truetype"), url(webfonts/fa-light-300.svg#fontawesome) format("svg")
+}
+
+@font-face {
+	font-family: 'Font Awesome 5 Brands';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: url(webfonts/fa-brands-400.eot);
+	src: url(webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"), url(webfonts/fa-brands-400.woff2) format("woff2"), url(webfonts/fa-brands-400.woff) format("woff"), url(webfonts/fa-brands-400.ttf) format("truetype"), url(webfonts/fa-brands-400.svg#fontawesome) format("svg")
+}
+
+@font-face{font-family:'iransans';
+	src:url('fonts/IRANSansWeb.ttf') format('truetype'), url('fonts/IRANSansWeb.woff') format('woff');}
+
+@font-face{font-family:'shabnam';
+	src:url('fonts/shabnam.ttf') format('truetype'), url('fonts/shabnam.woff') format('woff');}
+:root {
+	--main-color : #d2ac6a;
+}
+body {
+	background: #fff;
+	direction: rtl;
+	font-size: 16px;
+	text-align: right;
+	color: #303030;
+	line-height: 30px !important;
+	font-family: 'iransans';
+	overflow-x: hidden;
+}
+a {
+	transition: all .2s ease-in-out;
+	text-decoration: none;
+}
+.element-section {
+	float: right;
+	width: 100%;
+	background: #fff;
+}
+.nopadding {
+	padding: 0 !important;
+}
+.relative {
+	position: relative;
+}
+.clear {
+	clear: both;
+}
+.full-width {
+	width: 100% !important;
+}
+img{
+	width: 100%;
+	height: auto;
+}
+
+/*استایل های نوار بالای هدر اصلی*/
+.top-menu {
+	width: 100%;
+	float: right;
+	background:#3d3d3d;
+}
+.container {
+	max-width: 1100px;
+	margin: auto;
+}
+.containertopbar{
+	max-width: 1140px;
+	margin: auto;
+}
+.topbar{
+    width: 100%;
+    background: #000000;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #fff;
+}
+.topbar .adress{
+	width: 25%;
+	padding: 10px;
+	color: #fff;
+	line-height: 50px;
+	margin-right: 25px;
+}
+.topbar .adress span{
+	font-size: 14px;
+}
+.topbar .tell{
+	width: 67%;
+	padding: 10px;
+	color: #fff;
+	line-height: 50px;
+}
+.topbar .tell span{
+	font-size: 14px;
+}
+.topbar .shopping{
+	color: #fff;
+	line-height: 50px;
+	padding: 10px;
+}
+.topbar .shopping i{
+	cursor: pointer;
+	margin-left: 17px;
+}
+.topbar .sign{
+	color: #fff;
+	line-height: 50px;
+	padding: 10px;
+}
+.topbar .sign i{
+	padding-left: 25px;
+ 	border-left: 1px solid #515a5a;
+	cursor: pointer;
+}
+
+/*استایل های هدر اصلی*/
+.mainmenu{
+    width: 100%;
+	/*background: #000;*/
+	display: flex;
+	padding: 10px;
+	z-index: 999;
+}
+.mainmenu .logo {
+	height: 85px;
+	z-index: 999;
+}
+.mainmenu .menu-list{
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	margin-right: 300px;
+	z-index: 999;
+}
+.mainmenu .menu-list > ul > li {
+	float: right;
+	position: relative;
+}
+.mainmenu .menu-list  li  a {
+	color: #fff;
+	padding: 10px 30px;
+	font-weight: bold;
+}
+.mainmenu .menu-list li a:hover{
+	color: var(--main-color);
+}
+.mainmenu .menu-list > ul > li > a > i {
+	position: absolute;
+	top: 15px;
+	left: 10px;
+	font-size: 12px;
+}
+.mainmenu .menu-list ul li ul {
+	position: absolute;
+	width: 200px;
+	background: #000;
+	top: 80px;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .2s ease-in-out;
+	z-index: 999;
+	padding: 10px 0;
+}
+.mainmenu .menu-list > ul > li:hover ul{
+	opacity: 1;
+	visibility: visible;
+	top: 50px;
+}
+.mainmenu .menu-list ul li ul li {
+	padding: 5px 0px;
+	border-bottom: 1px solid #3b3b3b;
+	margin-bottom: 5px;
+}
+.mainmenu .menu-list ul li ul li:last-child{
+	border-bottom: none;
+}
+.mainmenu .menu-list ul li ul li ul.submenu {
+	position: absolute;
+	width: auto;
+	background: #000;
+	top: 0;
+	right: 240px;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .2s ease-in-out;
+	z-index: 999;
+	padding: 10px 0;
+	display: grid;
+	grid-template-columns: repeat(3, 10em);
+}
+.mainmenu .menu-list > ul > li > ul li:hover ul.submenu{
+	opacity: 1;
+	visibility: visible;
+	right: 210px;
+}
+/*استایل های اسلایدر اولی*/
+.box-slider{
+	float: right;
+	width: 100%;
+	direction: ltr;
+	position: absolute;
+	top: 69px;
+}
+.box-slider .slider-img img{
+	max-width: 100%;
+	height: auto;
+}
+.box-slider .slider-img .slider-text {
+	position: absolute;
+	top: 170px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	width: 1350px;
+	margin-left: 100px;
+}
+.box-slider .slider-img .slider-text h4{
+	font-size: 40px;
+}
+.box-slider .slider-img .slider-text p {
+	margin-top: 15px;
+	margin-bottom: 40px;
+	font-size: 20px;
+}
+.box-slider .slider-img .slider-text a {
+	color: var(--main-color);
+	border: 2px solid var(--main-color);
+	border-radius: 5px;
+	padding: 5px 25px;
+}
+.box-slider .slider-img .slider-text a:hover{
+	background: var(--main-color);
+	color: #fff;
+}
+
+/*استایل های باکس زیر اسلایدر*/
+.underslider-box{
+	float: right;
+	width: 100%;
+	background: #000000;
+	position: absolute;
+	top: 676px;
+}
+.underslider-box .heading-content h3 {
+	color: #fff;
+	text-align: center;
+	font-size: 30px;
+	margin-top: 50px;
+}
+ .heading-content img {
+	width: 256px;
+	height: auto;
+	margin-right: 423px;
+	margin-top: 5px;
+}
+.underslider-box .heading-content p {
+	color: #fff;
+	max-width: 997px;
+	text-align: center;
+	margin: auto;
+}
+.underslider-box .img-menu {
+	display: flex;
+	justify-content: space-between;
+}
+.underslider-box .img-menu .img1, .img2, .img3, .img4 {
+	width: 22%;
+	margin: 60px 39px;
+	overflow: hidden;
+}
+.underslider-box .img-menu img{
+	border-radius: 10px;
+}
+.underslider-box .img-menu h3{
+	color: #fff;
+	text-align: center;
+	margin-top: 20px;
+}
+.underslider-box .img-menu a {
+	color: var(--main-color);
+	font-size: 13px;
+	margin-right: 67px;
+}
+.underslider-box .img-menu .img1 ,.img3{
+	margin-top: 150px;
+}
+
+/*استایل های بخش داستان ما*/
+.our-story{
+	background: #171819;
+	padding: 110px 0;
+}
+.our-story .our-story2{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 1154px;
+}
+.our-story .story-txt {
+	background: var(--main-color);
+	width: 33%;
+	margin-top: -65px;
+	margin-left: -100px;
+	z-index: 999;
+	height: 370px;
+	text-align: center;
+	padding: 42px 20px;
+	border-radius: 10px;
+}
+.our-story .story-txt h3{
+	font-size: 30px;
+	font-weight: 100;
+	color: #000;
+}
+.our-story .story-txt .our-story-logo {
+	float: right;
+	margin-right: 150px;
+	margin-top: 25px;
+}
+.our-story .story-txt .our-story-logo img{
+	width: 100%;
+	height: auto;
+}
+.our-story .story-txt .our-story-txt {
+	margin-top: 10px;
+	float: right;
+}
+.our-story .story-txt .our-story-txt p {
+	line-height: 35px;
+	font-size: 15px;
+	color: #000;
+}
+.our-story .res-img{
+	width: 29%;
+}
+.our-story .res-img img{
+	width: 360px;
+	height: 400px;
+	border-radius: 10px;
+}
+.our-story .chef-img{
+	width: 30%;
+}
+.our-story .chef-img img {
+	width: 360px;
+	height: 400px;
+	border-radius: 10px;
+}
+
+/*استایل های بخش اموزش اشپزی*/
+.teaching{
+	width: 100%;
+}
+.teaching .cooking {
+	background: #000;
+	width: 100%;
+	display: flex;
+	height: 500px;
+}
+.teaching .cooking .course-img{
+	width: 45%;
+}
+.teaching .cooking .course-img img{
+	height: 500px;
+}
+.teaching .cooking .course-explain {
+	width: 55%;
+	padding-right: 40px;
+}
+.teaching .cooking .course-explain h3 {
+	color: #fff;
+	font-size: 20px;
+	margin-top: 80px;
+	margin-right: 25px;
+}
+.teaching .cooking .course-explain .logoimg {
+	width: 114px;
+	margin: 20px 25px 32px 0;
+}
+.teaching .cooking .course-explain p {
+	width: 81%;
+	color: #fff;
+	line-height: 34px;
+	margin-right: 25px;
+}
+.teaching .cooking .course-explain .course {
+	display: flex;
+	justify-content: space-around;
+	color: #fff;
+	margin-top: 70px;
+}
+.teaching .cooking .course-explain .course .course-detail {
+	margin-right: -35px;
+	text-align: center;
+}
+.teaching .cooking .course-explain .course .course-detail4 {
+	margin-left: 30px;
+}
+.teaching .cooking .course-explain .course .c-txt{
+	font-size: 12px;
+}
+.teaching .cooking .course-explain .course .c-number{
+	font-size: 25px;
+	color: var(--main-color);
+	font-weight: bold;
+}
+
+/*استایل های بخش منوی خوشمزه*/
+.addition {
+	background: #171819;
+	width: 100%;
+	float: right;
+	min-height: 2450px;
+}
+.addition .delicios-menu {
+	width: 1140px;
+	margin: 60px auto;
+	padding: 10px 0;
+}
+.addition .delicios-menu h4{
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+}
+.addition .delicios-menu .logoimg {
+	width: 114px;
+	margin: 25px 514px 50px;
+	display: inline-block;
+}
+.addition .delicios-menu .tabs {
+	padding: 10px 0;
+	margin: 0px 20px;
+	position: relative;
+}
+.addition .delicios-menu .tabs ul {
+	display: flex;
+	justify-content: space-around;
+	cursor: pointer;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #fff;
+	padding: 12px;
+	margin: 0 20px 80px;
+}
+.addition .delicios-menu .tabs li{
+	color: #fff;
+	font-size: 18px;
+}
+.addition .delicios-menu .content .content-right {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+.addition .delicios-menu .content .content-left {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+.addition .delicios-menu .content .bf-img {
+	width: 115px;
+	float: right;
+}
+.addition .delicios-menu .content .bf-img img {
+	border-radius: 5px;
+}
+.addition .delicios-menu .content h5{
+	font-size: 16px;
+}
+.addition .delicios-menu .content h5 , p.containes{
+	margin-right: 135px;
+	color: #fff;
+	margin-top: 5px;
+}
+.addition .delicios-menu span{
+	float: left;
+	color: var(--main-color);
+}
+.addition .delicios-menu .content span {
+	margin: -40px 0px 0px 80px;
+}
+.addition .delicios-menu .tabs .menu-item.active {
+	color: var(--main-color);
+}
+
+.addition .delicios-menu .tabs .content {
+	display: none;
+	padding: 20px;
+}
+
+.addition .delicios-menu .tabs .content.active {
+	display: flex;
+}
+.addition .time  {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+}
+.addition .time a {
+	color: var(--main-color);
+	border: 2px solid var(--main-color);
+	border-radius: 5px;
+	padding: 5px 25px;
+}
+.addition .time a:hover{
+	background: var(--main-color);
+	color: #fff;
+}
+.addition .time p{
+	color: #fff;
+}
+/*استایل های بخش پیشنهاد سراشپز */
+.addition .chef-suggest {
+	max-width: 1100px;
+	background: #000;
+	margin-top: 90px;
+	border-radius: 5px;
+	padding: 60px 40px;
+}
+.addition .chef-suggest .chef-title {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.addition .chef-suggest .chef-title h5{
+	color: #fff;
+	font-size: 25px;
+}
+.addition .chef-suggest .chef-title .logoimg {
+	width: 90px;
+	margin: 14px 1px 0 0;
+}
+.addition .chef-suggest .chef-menu{
+	display: flex;
+	margin-top: 40px;
+}
+.addition .chef-suggest .chef-menu .list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #fff;
+}
+.addition .chef-suggest .chef-menu .down-list {
+	margin-top: 80px;
+}
+.addition .chef-suggest .chef-menu .img1 .chef-suggest-img{
+	border-radius: 10px;
+}
+.addition .chef-suggest .chef-menu .list h5 {
+	font-size: 20px;
+	margin: 20px 0;
+}
+.addition .chef-suggest .chef-menu .list p{
+	text-align: center;
+	font-size: 16px;
+}
+.addition .chef-suggest .chef-menu .list a{
+	color: var(--main-color);
+	font-size: 12px;
+	margin-top: 20px;
+}
+/*استایل های بخش نظرات*/
+.patrons-comment{
+	color: #fff;
+}
+.comment-slider {
+	direction: ltr;
+}
+.comments-title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	margin: 60px 0 100px 0;
+}
+.comments-title h5{
+	font-size: 26px;
+}
+.top-comments{
+	width: 55px !important;
+}
+.patrons-comment .comments-title .logoimg{
+	width: 90px;
+}
+.comment-slider .slider-comment{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.slider-comment span {
+	font-size: 20px;
+	color: var(--main-color);
+	margin: 20px 0 40px 0;
+}
+.comment-slider .owl-theme .owl-nav{
+	display: flex;
+	justify-content: space-between;
+}
+.comment-slider .owl-carousel .owl-nav button.owl-next span{
+	color: var(--main-color);
+	position: absolute;
+	top: 36%;
+	font-size: 40px;
+	right: -2%;
+}
+.comment-slider .owl-carousel .owl-nav button.owl-prev span{
+	color: var(--main-color);
+	position: absolute;
+	top: 36%;
+	font-size: 40px;
+	left: -2%;
+}
+.owl-theme .owl-dots .owl-dot span{
+	background: var(--main-color);
+	width: 15px;
+	height: 2px;
+
+}
+.owl-theme .owl-dots .owl-dot.active span{
+	background: #ffba00;
+}
+
+/*استایل های رزرو و تماس*/
+.reserve-contact{
+	float: right;
+	width: 100%;
+}
+.both{
+	display: flex;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	text-align: center;
+	margin-top: -155px;
+	overflow: hidden;
+}
+.both .reserve {
+    background: #000;
+    width: 50%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding: 50px 20px;
+}
+.both .reserve h5 {
+	font-size: 26px;
+	font-weight: normal;
+}
+.both .reserve .logoimg , .both .contact .logoimg{
+	width: 65px;
+}
+.both .reserve p , .both .contact p{
+	margin-top: 20px;
+}
+.form{
+	width: 100%;
+	margin: 40px 0;
+}
+.form label {
+    font-size: 14px;
+    display: block;
+    text-align: right;
+}
+input.number1 , input[type=date] {
+    outline: none;
+    background: #000;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+	color: inherit;
+}
+.date-lb{
+	margin-top: 40px;
+}
+.personal-info {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-top: 40px;
+}
+.personal-info input {
+    padding: 10px;
+    border-radius: 5px;
+	outline: none;
+	width: 100%;
+}
+.personal-info .fname-lname{
+	width: 50%;
+}
+.personal-info .phone-num{
+	width: 50%;
+}
+.form button {
+    padding: 10px 80px;
+    font-size: 15px;
+    font-family: 'iransans';
+    border-radius: 5px;
+    color: #fff;
+    background: var(--main-color);
+    margin-top: 60px;
+	cursor: pointer;
+}
+.both .contact{
+	width: 50%;
+	background: var(--main-color);
+	color: #fff;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding: 50px 15px;
+}
+.both .reserve h5 , .both .contact h5 {
+	font-size: 22px;
+	font-weight: normal;
+}
+.both .contact p{
+	color: #000;
+	font-size: 22px;
+}
+.both .contact .ouraddress , .both .contact .work-time{
+	margin-top: 80px;
+}
+.all-time-work{
+	width: 100%;
+}
+.time-work {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    margin: 30px 0 -15px 0;
+}
+.time-work hr{
+	border-top: 1px solid #000;
+	width: 59%;
+}
+.time-work span.day{
+	padding-left: 10px;
+	font-size: 15px;
+}
+.time-work span.time{
+	padding-right: 10px;
+	font-size: 15px;
+}
+.article-slider{
+	float: right;
+	width: 100%;
+}
+.article-head  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	margin-top: 60px;
+}
+.article-slider .article-head h3{
+	color: #000;
+	font-size: 22px;
+}
+.article-head-logo {
+    width: 90px;
+}
+.slider-article{
+	direction: ltr;
+	margin: 25px 0 25px 0;
+}
+.slider-article .article-img {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 6px 0 #000;
+    height: 240px;
+}
+.slider-article .article-img img{
+	width: 100%;
+	height: 100%;
+}
+.slider-article .owl-theme .owl-nav {
+	display: flex;
+	justify-content: space-between
+}
+.slider-article .owl-theme .owl-nav .owl-prev {
+    position: absolute;
+    top: 120px;
+    left: -30px;
+    font-size: 50px;
+    background: rgba(210, 172, 106, 0.5);
+    padding: 10px;
+    width: 50px;
+    border-radius: 50px;
+    height: 50px;
+	color: #000;
+}
+.slider-article .owl-theme .owl-nav .owl-prev:hover{
+	color: #ffba00;
+}
+.slider-article .owl-theme .owl-nav .owl-next {
+    position: absolute;
+    top: 120px;
+    right: -30px;
+    font-size: 50px;
+    background: rgba(210, 172, 106, 0.7);
+    padding: 10px;
+    width: 50px;
+    border-radius: 50px;
+    height: 50px;
+	color: #000;
+}
+.slider-article .owl-theme .owl-nav .owl-next:hover{
+	color: #ffba00;
+}
+.footer{
+	width: 100%;
+	float: right;
+}
+.footer-sections{
+	background-image: url(img/background-with-fresh-tomatoes-variety-pasta.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding: 50px 270px 30px;
+	color: #fff;
+}
+.logo-footer{
+	width: 70%;
+	margin-bottom: 25px;
+}
+.footer-flex{
+	display: flex;
+	justify-content: space-between;
+}
+.footer-sections .explain{
+	width: 33%;
+}
+.footer-sections .explain p{
+	text-align: justify;
+}
+.footer-sections h4{
+    font-size: 18px;
+}
+.footer-sections a{
+	color: #fff;
+}
+.footer-sections .fast-access ,.footer-sections .menu-footer,.footer-sections .shoab{
+	margin-top: 30px;
+}
+.footer-sections .fast-access ul,.footer-sections .menu-footer ul,.footer-sections .shoab ul{
+	margin-top: 40px;
+}
+.footer-sections .fast-access ul li,.footer-sections .menu-footer ul li,.footer-sections .shoab ul li{
+	margin-top: 20px;
+}
+.footer-sections .fast-access ul li:first-child,.footer-sections .menu-footer ul li:first-child,.footer-sections .shoab ul li:first-child{
+	margin-top: 0;
+}
+.footer-sections .img-under-heads{
+	width: 25px;
+}
+.copyright-social {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+.copyright-social .copyright p, .copyright-social .social-media i{
+	font-size: 12px;
+}
+.copyright-social .social-media a{
+	margin-right: 10px;
+	padding: 10px;
+}
+.copyright-social .social-media a:hover{
+	color: var(--main-color);
+}
+
+.article-img{
+	position: relative;
+}
+.article-img::after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.5;
+}
